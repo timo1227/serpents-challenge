@@ -60,10 +60,12 @@ class ProjectileManager:
                 continue  # Skip projectiles that are outside the world borders
 
             # Check collision with the snake
-            if self.is_colliding_with_snake(projectile, snake):
-                if projectile.color == (1, 0, 0):  # Red projectile
-                    snake.shrink(projectile.damage)
-                remaining_projectiles.append(projectile)
+            if self.is_colliding_with_snake(projectile, snake) and projectile.color == (
+                1,
+                0,
+                0,
+            ):
+                snake.shrink(projectile.damage)
                 continue  # Skip projectiles that collided with the snake
 
             # Check collision with enemies
