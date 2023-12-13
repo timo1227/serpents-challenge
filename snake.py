@@ -308,12 +308,12 @@ class Snake:
         self.distance_constraints.append(new_constraint)
 
     def shrink(self, damage):
-        if len(self.particles) > 1 and len(self.particles) > damage:
+        snake_len = self.getSize
+        if snake_len > 1 and snake_len > damage:
             for i in range(damage):
                 self.particles.pop()
                 self.distance_constraints.pop()
-
-        elif len(self.particles) <= damage:
+        elif snake_len <= damage:
             self.deadFlag = True
 
     def update(self):
